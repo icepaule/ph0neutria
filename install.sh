@@ -15,7 +15,6 @@
 ## gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
 ## MP
 ## decided to delete any existing tor.source list
-rm /etc/apt/sources.list.d/tor.list
 ## as per the tor-Wikipage, this has changed to:
 echo 'deb https://deb.torproject.org/torproject.org bionic main' > /etc/apt/sources.list.d/tor.list
 echo 'deb-src https://deb.torproject.org/torproject.org bionic main' >> /etc/apt/sources.list.d/tor.list
