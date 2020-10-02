@@ -34,15 +34,20 @@ cd /tmp
 rm -rf yara
 pip3 install yara-python
 cd /opt
-git clone https://github.com/viper-framework/viper
-cd viper
-pip3 install -r requirements.txt
+## added by MP as viper-web had issues
+git clone https://github.com/viper-framework/viper.git
+git clone https://github.com/viper-framework/viper-web.git
+cp viper-web/viper-web viper/
+cp -r viper-web/web viper/viper/
+cp viper-web/manage.py viper/
+pip install viper-framework
+pip install -r viper-web/requirements.txt
 # Workaround for requests SSL errors (https://github.com/requests/requests/issues/3006):
 pip3 install --force-reinstall requests[security]
 cd viper/modules
 git clone https://github.com/viper-framework/pdftools
 cd /opt
-git clone https://github.com/phage-nz/ph0neutria
+git clone https://github.com/icepaule/ph0neutria
 cd ph0neutria
 pip3 install -r requirements.txt
 cp core/config/settings.conf.dist core/config/settings.conf
